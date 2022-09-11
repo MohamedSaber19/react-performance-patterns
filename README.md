@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# React Performance Patterns
+## **About The Project**
+This react app uses mix of Design & Performance Patterns
+### Performance Patterns
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* [List Virtualization](https://www.patterns.dev/posts/virtual-lists/): one of the main Performance Patterns, 
+    In simple words **how you can display large lists of data efficiently** by focusing on rendering just items visible to user.
 
-## Available Scripts
+    In this project we use a performant and versatile virtualized masonry grid for React called [Masonic](https://reactjs.org/) which based on [react-virtualized](https://github.com/bvaughn/react-virtualized).
 
-In the project directory, you can run:
+* [Optimize loading third-parties](https://www.patterns.dev/posts/third-party/) Lazy loading all images by providing **loading** attribute *lazy* which means load images only when user scroll to them.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Design Patterns
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* [Hooks Design Pattern](https://www.patterns.dev/posts/hooks-pattern/)
+    We use some built-in React Hooks " ```useState```, ```useEffect```,  ```useCallback```, ```useRef``` " in addition to some hooks provided by [Masonic](https://github.com/jaredLunde/masonic/) like " ```useContainerPosition```, ```useMasonry```, ```usePositioner```, ```useScroller``` " , which allows us to use React state and lifecycle methods without having to use a ES2015 class components.
 
-### `npm test`
+## **Built With**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [React](https://reactjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Masonic](https://github.com/jaredLunde/masonic/)
 
-### `npm run build`
+## **Data**
+* We use a free public API from [TVMAZE](https://www.tvmaze.com/) which returns all popular shows with all info we need.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## **Getting Started**
+### Installation
+1. Clone the repo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```sh
+   git clone https://github.com/MohamedSaber19/react-performance-patterns.git
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install NPM packages
 
-### `npm run eject`
+   ```sh
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Run the App
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```sh
+   npm start
+   ```   
+    This will run the app in the development mode.\
+    Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### **Performance Metrics**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+We used Chrome **Lighthouse** extension in the browser dev tools to measure performance after implementing the virtualization and below a screenshot of the report on desktop version **Timespan** mode
 
-## Learn More
+![Lighthouse Metrics](./public/lighthouse-metrics-timespan.PNG)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can have your own report by navigating to **Lighthouse** tab in dev tools then select *Timespan* mode and select the device desktop/mobile and then check *performance* checkbox from categories section then click on **Start timespan** button.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### **Notes**
+
+* The app is fully responsive on all screens.
+* You can check the virtualization by inspecting the grid in the Elements tab in dev tools, you will see that only few divs rendered within the viewport and while you scroll more divs are rendered and replace the out-of-viewport divs. 
