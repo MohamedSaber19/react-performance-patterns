@@ -59,3 +59,8 @@ You can have your own report by navigating to **Lighthouse** tab in dev tools th
 
 * The app is fully responsive on all screens.
 * You can check the virtualization by inspecting the grid in the Elements tab in dev tools, you will see that only few divs rendered within the viewport and while you scroll more divs are rendered and replace the out-of-viewport divs. 
+
+
+### **Demo**
+
+You can check the live production build [here](https://movies-masonry.herokuapp.com/)
