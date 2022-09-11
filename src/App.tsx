@@ -17,7 +17,7 @@ type TRenderProps = {
 };
 
 const App = () => {
-  const apiURL: string = "http://api.tvmaze.com/shows";
+  const apiURL: string = "https://api.tvmaze.com/shows";
   const [data, setData] = useState<IMovie[]>([]);
 
   const containerRef = useRef(null);
