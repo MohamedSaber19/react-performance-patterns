@@ -42,7 +42,7 @@ This react app uses mix of Design & Performance Patterns
 3. Run the App
 
    ```sh
-   npm start
+   npm run devstart
    ```   
     This will run the app in the development mode.\
     Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
