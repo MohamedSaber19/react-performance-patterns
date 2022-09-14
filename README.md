@@ -42,7 +42,7 @@ This react app uses mix of Design & Performance Patterns
 3. Run the App
 
    ```sh
-   npm start
+   npm run devstart
    ```   
     This will run the app in the development mode.\
     Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -58,7 +58,8 @@ You can have your own report by navigating to **Lighthouse** tab in dev tools th
 ### **Notes**
 
 * The app is fully responsive on all screens.
-* You can check the virtualization by inspecting the grid in the Elements tab in dev tools, you will see that only few divs rendered within the viewport and while you scroll more divs are rendered and replace the out-of-viewport divs. 
+* You can check the virtualization by inspecting the grid in the Elements tab in dev tools, you will see that only few divs rendered within the viewport and while you scroll more divs are rendered and replace the out-of-viewport divs.
+* To run the production build from the app on **Heroku** it's required to add a server & update the scripts in package.json.  
 
 
 ### **Demo**
